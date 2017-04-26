@@ -4,16 +4,33 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/ava"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/10dias/B02D01.git"
   },
-  "author": "",
+  "author": {
+      "name":"Thassio Victor",
+      "email":"tvmcarvalho@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/10dias/B02D01/issues"
   },
-  "homepage": "https://github.com/10dias/B02D01#readme"
+  "homepage": "https://github.com/10dias/B02D01#readme",
+  "dependencies": {
+    "hapi": "^16.1.1"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
+  },
+  "ava":{
+      "files":[
+          "testes/*.js"
+      ],
+      "souce":[
+          "index.js"
+      ]
+  }
 }

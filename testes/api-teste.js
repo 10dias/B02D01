@@ -5,9 +5,17 @@
 'use strict';
 
 const teste = require('ava');
-//@TODO carregar servidor
+const server = require('../index');
 
 
 teste('teste de endpoint | GET /', t => {
-    t.pass();
+    const req = {
+        method: 'GET',
+        url: '/'
+    };
+
+    return server.inject(req, res => {
+        const d = res.payload.time;
+        t.not(typeof(d), 'NaN');
+    });
 });

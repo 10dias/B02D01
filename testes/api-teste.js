@@ -14,8 +14,10 @@ teste('teste de endpoint | GET /', t => {
         url: '/'
     };
 
-    return server.inject(req, res => {
-        const d = res.payload.time;
-        t.not(typeof(d), 'NaN');
+    return server.inject(req)
+    .then(res => {
+        const d = JSON.parse(res.payload);
+        const time = Date.parse(d.time);
+        t.not(time, 'NaN');
     });
 });
